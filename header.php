@@ -31,6 +31,8 @@
     <meta property="twitter:title" content="Landing Page NEON - Redesign">
     <meta property="twitter:description" content="A conta digital certa pra cuidar bem do seu dinheiro">
     <meta property="twitter:image" content="https://codeboost.com.br/projetos/lp-neon/share-img.jpg">
+
+    <?php wp_head(); ?>
 </head>
 
 <body>
