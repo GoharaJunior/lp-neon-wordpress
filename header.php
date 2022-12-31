@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/css/main.css">
 
-    <title>Landing Page NEON - Redesign</title>
+    <!-- Primary Meta Tags -->
+    <title><?php bloginfo('name') ?> <?php wp_title('|') ?></title>
     <meta name="title" content="Landing Page NEON - Redesign">
     <meta name="description" content="A conta digital certa pra cuidar bem do seu dinheiro">
 
