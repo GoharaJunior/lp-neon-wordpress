@@ -39,19 +39,22 @@
 <body>
     <header>
         <div class="container">
-        <a href="" class="logo" title="Logo NEON"></a>
-        <nav>
-            <ul>
-            <li><a href="">Produtos Neon</a></li>
-            <li><a href="">Conta digital PJ</a></li>
-            <li><a href="<?php echo get_permalink(get_page_by_path('Sobre')) ?>">Quem somos</a></li>
-            <li><a href="<?php echo get_permalink(get_page_by_path('Blog')) ?>">Blog</a></li>
-            <li><a href="<?php echo get_permalink(get_page_by_path('Contato')) ?>">Ajuda</a></li>
-            </ul>
-            <a href="" class="btn-secondary white">Abra sua conta digital</a>
-        </nav>
-        <button class="btn-mobile">
-            <img src="<?php echo get_template_directory_uri() ?>/img/icon-mobile.svg" alt="">
-        </button>
+            <a href="" class="logo" title="Logo NEON"></a>
+            <nav>
+                
+                <?php
+                    $args = array(
+                        'menu' => 'Header Principal',
+                        'theme_location' => 'header-principal',
+                        'container' => false
+                    );
+                    wp_nav_menu( $args );
+                ?>
+
+                <a href="" class="btn-secondary white">Abra sua conta digital</a>
+                <button class="btn-mobile">
+                    <img src="<?php echo get_template_directory_uri() ?>/img/icon-mobile.svg" alt="">
+                </button>
+            </nav>
         </div>
     </header>
