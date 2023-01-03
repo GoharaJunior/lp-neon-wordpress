@@ -8,37 +8,27 @@
 <section class="s-hero">
 <div class="container">
     <div class="left-area" data-aos="fade-right">
-    <h3>Abra sua conta, é só baixar o app!</h3>
-    <h1>A conta digital certa pra cuidar bem do seu dinheiro</h1>
-    <a href="" class="btn-primary">Abra sua conta digital</a>
-    <ul>
-        <li>
-        <div class="icon">
-            <img src="<?php echo get_template_directory_uri() ?>/img/icon-card.svg" alt="Icone de cartão">
-        </div>
-        <span>Cartão sem<br /> anuidade</span>
-        </li>
-        <li>
-        <div class="icon">
-            <img src="<?php echo get_template_directory_uri() ?>/img/icon-account.svg" alt="Icone de conta">
-        </div>
-        <span>Conta digital<br /> 100% grátis</span>
-        </li>
-        <li>
-        <div class="icon">
-            <img src="<?php echo get_template_directory_uri() ?>/img/icon-cash.svg" alt="Icon de dinheiro">
-        </div>
-        <span>Seu dinheiro<br /> rendendo mais</span>
-        </li>
-    </ul>
+        <h3><?php the_field('subtitulo_section_hero') ?></h3>
+        <h1><?php the_field('titulo_section_hero') ?></h1>
+        <a href="" class="btn-primary"><?php the_field('texto_do_botao_abra_sua_conta_digital') ?></a>
+        <ul>
+            <?php if( have_rows('cadastrar_itens_da_section_hero') ): while ( have_rows('cadastrar_itens_da_section_hero') ) : the_row(); ?>
+                <li>
+                    <div class="icon">
+                        <img src="<?php the_sub_field('icone_item') ?>" alt="Icone de cartão">
+                    </div>
+                    <span><?php the_sub_field('texto_item') ?></span>
+                </li>
+            <?php endwhile; else : endif;?>
+        </ul>
     </div>
     <div class="right-area">
-    <h2 data-aos="fade-left">Banco 100% digital</h2>
-    <div class="image">
-        <img src="<?php echo get_template_directory_uri() ?>/img/card-neon-front.png" alt="Cartão NEON - frente" class="front-card">
-        <img src="<?php echo get_template_directory_uri() ?>/img/card-neon-back.png" alt="Cartão NEON - back" class="back-card">
-        <img src="<?php echo get_template_directory_uri() ?>/img/marca-neon.svg" data-aos="fade-up" alt="Marca NEON" class="marca">
-    </div>
+        <h2 data-aos="fade-left"><?php the_field('texto_do_banco_100_digital') ?></h2>
+        <div class="image">
+            <img src="<?php echo get_template_directory_uri() ?>/img/card-neon-front.png" alt="Cartão NEON - frente" class="front-card">
+            <img src="<?php echo get_template_directory_uri() ?>/img/card-neon-back.png" alt="Cartão NEON - back" class="back-card">
+            <img src="<?php echo get_template_directory_uri() ?>/img/marca-neon.svg" data-aos="fade-up" alt="Marca NEON" class="marca">
+        </div>
     </div>
 </div>
 </section>
