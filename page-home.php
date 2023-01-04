@@ -43,68 +43,50 @@
     <div class="text" data-aos="fade-up">
         <img src="<?php echo get_template_directory_uri() ?>/img/icon-neon-xs.svg" class="icon" alt="Icon Neon">
         <div class="info">
-        <h3>Baixe nosso app</h3>
-        <p>Que tal abrir uma conta digital para ver como a gente faz a sua vida muito mais simples?</p>
-        <ul>
-            <li>
-            <a href="" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/img/apple-store.svg" alt="">
-            </a>
-            </li>
-            <li>
-            <a href="" target="_blank">
-                <img src="<?php echo get_template_directory_uri() ?>/img/google-play.svg" alt="">
-            </a>
-            </li>
-        </ul>
+            <h3><?php the_field('titulo_baixe_nosso_app'); ?></h3>
+            <p><?php the_field('descricao_baixe_nosso_app'); ?></p>
+            <ul>
+                <li>
+                <a href="" target="_blank">
+                    <img src="<?php echo get_template_directory_uri() ?>/img/apple-store.svg" alt="">
+                </a>
+                </li>
+                <li>
+                <a href="" target="_blank">
+                    <img src="<?php echo get_template_directory_uri() ?>/img/google-play.svg" alt="">
+                </a>
+                </li>
+            </ul>
         </div>
     </div>
     </div>
     <div class="right-area">
     <div class="text-app">
-        <h2 data-aos="fade-left">Resolva sua vida direto pelo app Neon!</h2>
+        <h2 data-aos="fade-left"><?php the_field('titulo_section_app_neon') ?></h2>
         <ul>
-        <li data-aos="fade-left" data-aos-delay="200">
-            <div>
-            <img src="<?php echo get_template_directory_uri() ?>/img/icon-cartao-credito.svg" alt="Icone cartão de crédito" class="icon">
-            <div class="info">
-                <h3>Cartão de crédito sem anuidade</h3>
-                <p>Conta digital com cartão de crédito sem anuidade e sem complicação</p>
-            </div>
-            </div>
-            <img src="<?php echo get_template_directory_uri() ?>/img/arrow-left.svg" class="arrow" alt="Arrow">
-        </li>
-        <li data-aos="fade-left" data-aos-delay="300">
-            <div>
-            <img src="<?php echo get_template_directory_uri() ?>/img/icon-taxas.svg" alt="Icone cartão de crédito" class="icon">
-            <div class="info">
-                <h3>Sem taxas</h3>
-                <p>Transferências, boletos de depósito e outros serviços gratuitos</p>
-            </div>
-            </div>
-            <img src="<?php echo get_template_directory_uri() ?>/img/arrow-left.svg" class="arrow" alt="Arrow">
-        </li>
-        <li data-aos="fade-left" data-aos-delay="400">
-            <div>
-            <img src="<?php echo get_template_directory_uri() ?>/img/icon-investimentos.svg" alt="Icone cartão de crédito" class="icon">
-            <div class="info">
-                <h3>Mais investimentos</h3>
-                <p>Rendem mais que a poupança e você resgata quando quiser</p>
-            </div>
-            </div>
-            <img src="<?php echo get_template_directory_uri() ?>/img/arrow-left.svg" class="arrow" alt="Arrow">
-        </li>
+            <?php if( have_rows('cadastrar_beneficios_app_neon') ): while ( have_rows('cadastrar_beneficios_app_neon') ) : the_row(); ?>
+                <li data-aos="fade-left" data-aos-delay="200">
+                    <div>
+                        <img src="<?php the_sub_field('icone_beneficio') ?>" alt="Icone cartão de crédito" class="icon">
+                        <div class="info">
+                            <h3><?php the_sub_field('titulo_beneficio') ?></h3>
+                            <p><?php the_sub_field('descricao_beneficio') ?></p>
+                        </div>
+                    </div>
+                    <img src="<?php echo get_template_directory_uri() ?>/img/arrow-left.svg" class="arrow" alt="Arrow">
+                </li>
+            <?php endwhile; else : endif;?>
         </ul>
-        <a href="" class="btn" data-aos="fade-left">Conheça outros produtos</a>
+        <a href="" class="btn" data-aos="fade-left"><?php the_field('botao_conheca_outros_produtos'); ?></a>
     </div>
     <div class="box" data-aos="fade-left">
         <div class="text">
-        <h2>Neon Pejota</h2>
-        <h3>Contas digitais PJ gratuitas para decolar seu negócio!</h3>
-        <p>As melhores contas para fazer pagamentos, compras e receber dos seus clientes.</p>
+        <h2><?php the_field('titulo_pj') ?></h2>
+        <h3><?php the_field('subtitulo_pj') ?></h3>
+        <p><?php the_field('descricao_pj') ?></p>
         <div class="btns">
-            <a href="" class="btn-primary">Sou <strong>MEI</strong></a>
-            <a href="" class="btn-primary">Sou <strong>ME</strong></a>
+            <a href="" class="btn-primary">Sou <strong><?php the_field('texto_botao_mei') ?></strong></a>
+            <a href="" class="btn-primary">Sou <strong><?php the_field('texto_botao_me') ?></strong></a>
         </div>
         </div>
         <img src="<?php echo get_template_directory_uri() ?>/img/cartao-neon.png" alt="Cartão NEON" class="image">
